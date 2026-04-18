@@ -97,9 +97,7 @@
     }
   }
 
-  .animate-pulse-slow {
-    animation: pulse-slow 4s ease-in-out infinite;
-  }
+  --animate-pulse-slow: pulse-slow 4s ease-in-out infinite;
 }
 
 :root {

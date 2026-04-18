@@ -68,7 +68,7 @@ export function Hero() {
             className="inline-flex items-center gap-2 rounded-full bg-accent px-7 py-3.5 text-sm font-medium text-white shadow-lg shadow-accent/30 transition-all hover:scale-[1.02] hover:bg-accent/90"
           >
             <Phone className="h-4 w-4" strokeWidth={2.2} />
-            Appeler
+            Appeler • <span className="font-arabic translate-y-[1px]">إتصل</span>
           </a>
           <a
             href="https://goo.gl/maps/4SE8qzZ6uzBudB159"
@@ -77,7 +77,7 @@ export function Hero() {
             className="inline-flex items-center gap-2 rounded-full border-2 border-white/90 bg-white/5 px-7 py-3.5 text-sm font-medium text-white backdrop-blur-sm transition-all hover:scale-[1.02] hover:bg-white hover:text-primary"
           >
             <MapPin className="h-4 w-4" strokeWidth={2.2} />
-            Nous trouver
+            Nous trouver • <span className="font-arabic translate-y-[1px]">موقعنا</span>
           </a>
         </div>
       </div>
