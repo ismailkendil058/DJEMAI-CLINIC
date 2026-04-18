@@ -16,11 +16,7 @@ export function Contact() {
         <FadeIn>
           <div className="mb-14 text-center">
             <h2 className="font-serif text-4xl text-primary sm:text-5xl">Contactez-nous</h2>
-            <p
-              dir="rtl"
-              lang="ar"
-              className="font-arabic mt-2 text-2xl font-light text-accent"
-            >
+            <p dir="rtl" lang="ar" className="font-arabic mt-2 text-2xl font-light text-accent">
               تواصلوا معنا
             </p>
           </div>
@@ -30,9 +26,7 @@ export function Contact() {
           {/* Contact card */}
           <FadeIn>
             <div className="h-full rounded-2xl bg-white p-8 shadow-[var(--shadow-card)] sm:p-10">
-              <h3 className="font-serif text-2xl font-semibold text-primary">
-                Coordonnées
-              </h3>
+              <h3 className="font-serif text-2xl font-semibold text-primary">Coordonnées</h3>
               <div className="mt-6 space-y-5">
                 {items.map(({ Icon, lines }, i) => (
                   <div key={i} className="flex items-start gap-4">

@@ -62,11 +62,7 @@ export function Services() {
         <FadeIn>
           <div className="mb-16 text-center">
             <h2 className="font-serif text-4xl text-primary sm:text-5xl">Nos Services</h2>
-            <p
-              dir="rtl"
-              lang="ar"
-              className="font-arabic mt-2 text-2xl font-light text-accent"
-            >
+            <p dir="rtl" lang="ar" className="font-arabic mt-2 text-2xl font-light text-accent">
               خدماتنا
             </p>
             <p className="mx-auto mt-5 max-w-md text-base text-muted-foreground">
@@ -84,11 +80,7 @@ export function Services() {
                 </div>
                 <div className="flex items-baseline justify-between gap-3">
                   <h3 className="font-serif text-2xl font-semibold text-primary">{title}</h3>
-                  <span
-                    dir="rtl"
-                    lang="ar"
-                    className="font-arabic text-sm font-light text-accent"
-                  >
+                  <span dir="rtl" lang="ar" className="font-arabic text-sm font-light text-accent">
                     {ar}
                   </span>
                 </div>

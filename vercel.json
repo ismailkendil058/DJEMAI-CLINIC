@@ -1,4 +1,10 @@
 {
-    "outputDirectory": ".output",
-    "buildCommand": "NITRO_PRESET=vercel npm run build"
+    "outputDirectory": "dist/client",
+    "cleanUrls": true,
+    "rewrites": [
+        {
+            "source": "/(.*)",
+            "destination": "/_shell.html"
+        }
+    ]
 }

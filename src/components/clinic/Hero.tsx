@@ -90,7 +90,10 @@ export function Hero() {
             onClick={() => setActive(i)}
             aria-label={`Slide ${i + 1}`}
             className="h-1.5 rounded-full bg-white/50 transition-all hover:bg-white/80"
-            style={{ width: i === active ? 28 : 10, backgroundColor: i === active ? "#fff" : undefined }}
+            style={{
+              width: i === active ? 28 : 10,
+              backgroundColor: i === active ? "#fff" : undefined,
+            }}
           />
         ))}
       </div>
