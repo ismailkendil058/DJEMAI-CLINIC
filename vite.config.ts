@@ -9,6 +9,9 @@ export default defineConfig(({ mode }) => ({
         tanstackStart({
             spa: {
                 enabled: true,
+                prerender: {
+                    outputPath: 'index'
+                }
             },
         }),
         react(),
