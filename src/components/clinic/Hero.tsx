@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import { Phone, MapPin } from "lucide-react";
 
 const slides = [
-  "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1400",
-  "https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=1400",
-  "https://images.unsplash.com/photo-1571772996211-2f02c9727629?w=1400",
-  "https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=1400",
+  "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&q=80&w=1600",
+  "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&q=80&w=1600",
+  "https://images.unsplash.com/photo-1571772996211-2f02c9727629?auto=format&q=80&w=1600",
+  "https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&q=80&w=1600",
 ];
 
 export function Hero() {

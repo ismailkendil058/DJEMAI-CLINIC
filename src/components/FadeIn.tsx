@@ -21,7 +21,10 @@ export function FadeIn({ children, delay = 0, className = "", as: Tag = "div" }:
           obs.disconnect();
         }
       },
-      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" },
+      {
+        threshold: 0.05,
+        rootMargin: "0px 0px -10px 0px"
+      },
     );
     obs.observe(el);
     return () => obs.disconnect();
@@ -33,8 +36,8 @@ export function FadeIn({ children, delay = 0, className = "", as: Tag = "div" }:
       className={className}
       style={{
         opacity: visible ? 1 : 0,
-        transform: visible ? "translateY(0)" : "translateY(20px)",
-        transition: `opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1) ${delay}ms, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1) ${delay}ms`,
+        transform: visible ? "translateY(0)" : "translateY(15px)",
+        transition: `opacity 0.5s ease-out ${delay}ms, transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1) ${delay}ms`,
       }}
     >
       {children}

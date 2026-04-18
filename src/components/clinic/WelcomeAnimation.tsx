@@ -11,12 +11,12 @@ export function WelcomeAnimation() {
 
         const timer = setTimeout(() => {
             setIsVisible(false);
-        }, 2800);
+        }, 1800);
 
         const unmountTimer = setTimeout(() => {
             setShouldRender(false);
             document.body.style.overflow = "";
-        }, 3800);
+        }, 2400);
 
         return () => {
             clearTimeout(timer);
@@ -51,7 +51,7 @@ export function WelcomeAnimation() {
                 {/* Main Icon with stylized ring */}
                 <div
                     className="relative mb-10 flex items-center justify-center animate-[scale-in_1s_ease-out_forwards]"
-                    style={{ animationDelay: '0.2s', opacity: 0 }}
+                    style={{ animationDelay: '0.1s', opacity: 0 }}
                 >
                     <div className="absolute w-20 h-20 border-[0.5px] border-primary/20 rounded-full animate-ping duration-[3s]" />
                     <div className="absolute w-16 h-16 border-[0.5px] border-primary/40 rounded-full" />
@@ -64,8 +64,8 @@ export function WelcomeAnimation() {
                 <div className="flex flex-col items-center text-center px-6 max-w-2xl">
                     <div className="overflow-hidden mb-2">
                         <h1
-                            className="font-serif text-[42px] leading-tight sm:text-[56px] text-foreground font-medium tracking-tight animate-[fade-in-up_1.2s_ease-out_forwards]"
-                            style={{ animationDelay: '0.5s', opacity: 0 }}
+                            className="font-serif text-[42px] leading-tight sm:text-[56px] text-foreground font-medium tracking-tight animate-[fade-in-up_1s_ease-out_forwards]"
+                            style={{ animationDelay: '0.3s', opacity: 0 }}
                         >
                             Clinic Djemai
                         </h1>
@@ -76,8 +76,8 @@ export function WelcomeAnimation() {
                         <p
                             dir="rtl"
                             lang="ar"
-                            className="font-arabic text-lg sm:text-xl text-primary font-medium animate-[fade-in-up_1.2s_ease-out_forwards]"
-                            style={{ animationDelay: '0.7s', opacity: 0 }}
+                            className="font-arabic text-lg sm:text-xl text-primary font-medium animate-[fade-in-up_1s_ease-out_forwards]"
+                            style={{ animationDelay: '0.45s', opacity: 0 }}
                         >
                             مصحة التشخيص الطبي و إعادة التأهيل الوظيفي
                         </p>
@@ -86,14 +86,14 @@ export function WelcomeAnimation() {
                     {/* French Slogan */}
                     <div className="overflow-hidden mb-6">
                         <p
-                            className="text-xs sm:text-sm font-medium tracking-[0.2em] text-foreground/60 animate-[fade-in-up_1.2s_ease-out_forwards]"
-                            style={{ animationDelay: '0.9s', opacity: 0 }}
+                            className="text-xs sm:text-sm font-medium tracking-[0.2em] text-foreground/60 animate-[fade-in-up_1s_ease-out_forwards]"
+                            style={{ animationDelay: '0.6s', opacity: 0 }}
                         >
                             Soin · Précision · Réhabilitation
                         </p>
                     </div>
 
-                    <div className="flex items-center gap-4 animate-[fade-in_1s_ease-out_forwards]" style={{ animationDelay: '1.2s', opacity: 0 }}>
+                    <div className="flex items-center gap-4 animate-[fade-in_0.8s_ease-out_forwards]" style={{ animationDelay: '0.8s', opacity: 0 }}>
                         <div className="h-[0.5px] w-8 bg-primary/30" />
                         <p className="font-sans text-[10px] uppercase tracking-[0.5em] text-accent font-semibold">
                             Carte Visite Digitale
@@ -102,8 +102,8 @@ export function WelcomeAnimation() {
                     </div>
 
                     <div
-                        className="mt-10 opacity-40 font-sans text-[9px] tracking-[0.3em] text-muted-foreground animate-[fade-in_1.5s_ease-out_forwards]"
-                        style={{ animationDelay: '1.5s', opacity: 0 }}
+                        className="mt-10 opacity-40 font-sans text-[9px] tracking-[0.3em] text-muted-foreground animate-[fade-in_1s_ease-out_forwards]"
+                        style={{ animationDelay: '1s', opacity: 0 }}
                     >
                         ROUIBA • ALGER
                     </div>
@@ -112,8 +112,8 @@ export function WelcomeAnimation() {
                 {/* Elegant Progress Line */}
                 <div className="absolute bottom-[-140px] w-48 h-[1px] bg-primary/5 overflow-hidden">
                     <div
-                        className="h-full bg-primary/40 animate-[line-width_2.5s_cubic-bezier(0.65,0,0.35,1)_forwards]"
-                        style={{ width: 0, animationDelay: '0.2s' }}
+                        className="h-full bg-primary/40 animate-[line-width_1.8s_cubic-bezier(0.65,0,0.35,1)_forwards]"
+                        style={{ width: 0, animationDelay: '0.1s' }}
                     />
                 </div>
             </div>

@@ -1,8 +1,10 @@
+import { lazy, Suspense } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { Hero } from "@/components/clinic/Hero";
 import { Services } from "@/components/clinic/Services";
-import { Contact } from "@/components/clinic/Contact";
-import { Footer } from "@/components/clinic/Footer";
+
+const Contact = lazy(() => import("@/components/clinic/Contact").then(m => ({ default: m.Contact })));
+const Footer = lazy(() => import("@/components/clinic/Footer").then(m => ({ default: m.Footer })));
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -21,7 +23,7 @@ export const Route = createFileRoute("/")({
       },
       {
         property: "og:image",
-        content: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1400",
+        content: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&q=80&w=1400",
       },
     ],
     links: [
@@ -40,8 +42,12 @@ function Index() {
     <main className="min-h-screen bg-background">
       <Hero />
       <Services />
-      <Contact />
-      <Footer />
+      <Suspense fallback={<div className="h-40" />}>
+        <Contact />
+      </Suspense>
+      <Suspense fallback={<div className="h-20" />}>
+        <Footer />
+      </Suspense>
     </main>
   );
 }

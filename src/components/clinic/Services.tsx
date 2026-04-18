@@ -82,7 +82,7 @@ export function Services() {
 
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {services.map(({ id, Icon, title, ar, desc }, i) => (
-            <FadeIn key={title} delay={i * 70}>
+            <FadeIn key={title} delay={i * 40}>
               <Link
                 to="/services/$serviceId"
                 params={{ serviceId: id }}
