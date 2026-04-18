@@ -136,17 +136,17 @@ function ServiceDetail() {
                 <ChevronLeft className="h-5 w-5" />
                 Retour aux services
               </Link>
-              <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
+              <div className="flex flex-col items-center text-center gap-6">
+                <div className="h-24 w-24 rounded-3xl bg-white/10 backdrop-blur-md flex items-center justify-center mb-2 animate-pulse-slow">
+                  <Icon className="h-12 w-12 text-white" strokeWidth={1.5} />
+                </div>
                 <div>
-                  <h1 className="text-4xl md:text-5xl font-serif text-white mb-2">
+                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif text-white mb-4 leading-tight">
                     {service.title}
                   </h1>
-                  <p dir="rtl" className="text-2xl font-arabic text-accent-foreground font-light text-red-100">
+                  <p dir="rtl" className="text-2xl md:text-3xl font-arabic text-red-100/90 font-light">
                     {service.ar}
                   </p>
-                </div>
-                <div className="h-20 w-20 rounded-2xl bg-white/10 backdrop-blur-sm flex items-center justify-center shrink-0">
-                  <Icon className="h-10 w-10 text-white" />
                 </div>
               </div>
             </FadeIn>

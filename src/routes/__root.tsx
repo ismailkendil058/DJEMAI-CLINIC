@@ -1,4 +1,5 @@
 import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
+import { WelcomeAnimation } from "@/components/clinic/WelcomeAnimation";
 
 import appCss from "../styles.css?url";
 
@@ -29,11 +30,11 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "ismailLOGESTICS" },
-      { name: "description", content: "Digital Suite for ismailLOGESTICS" },
-      { name: "author", content: "ismailLOGESTICS" },
-      { property: "og:title", content: "ismailLOGESTICS" },
-      { property: "og:description", content: "Digital Suite for ismailLOGESTICS" },
+      { title: "Clinic Djemai — Carte Visite" },
+      { name: "description", content: "Digital Suite for Clinic Djemai" },
+      { name: "author", content: "Clinic Djemai" },
+      { property: "og:title", content: "Clinic Djemai" },
+      { property: "og:description", content: "Digital Suite for Clinic Djemai" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
     ],
@@ -69,5 +70,10 @@ function RootShell({ children }: { children: React.ReactNode }) {
 }
 
 function RootComponent() {
-  return <Outlet />;
+  return (
+    <>
+      <WelcomeAnimation />
+      <Outlet />
+    </>
+  );
 }

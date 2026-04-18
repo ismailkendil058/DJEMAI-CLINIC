@@ -38,21 +38,88 @@
 
   --shadow-card: 0 1px 2px rgb(0 0 0 / 0.04), 0 8px 24px -12px rgb(45 80 22 / 0.08);
   --shadow-card-hover: 0 4px 8px rgb(0 0 0 / 0.04), 0 20px 40px -16px rgb(45 80 22 / 0.18);
+
+  @keyframes scale-in {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes line-width {
+    from {
+      width: 0;
+    }
+
+    to {
+      width: 100%;
+    }
+  }
+
+  @keyframes pulse-slow {
+
+    0%,
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    50% {
+      opacity: 0.8;
+      transform: scale(1.05);
+    }
+  }
+
+  .animate-pulse-slow {
+    animation: pulse-slow 4s ease-in-out infinite;
+  }
 }
 
 :root {
   --radius: 1rem;
 
-  --background: oklch(0.985 0.005 95);          /* #FAFAF8 warm white */
-  --foreground: oklch(0.18 0 0);                /* #1A1A1A */
+  --background: oklch(0.985 0.005 95);
+  /* #FAFAF8 warm white */
+  --foreground: oklch(0.18 0 0);
+  /* #1A1A1A */
 
-  --primary: oklch(0.5 0.15 240);              /* Medical Blue */
+  --primary: oklch(0.5 0.15 240);
+  /* Medical Blue */
   --primary-foreground: oklch(0.99 0 0);
 
-  --accent: oklch(0.6 0.22 25);               /* Accent Red */
+  --accent: oklch(0.6 0.22 25);
+  /* Accent Red */
   --accent-foreground: oklch(0.99 0 0);
 
-  --light-blue: oklch(0.95 0.03 240);         /* Soft Blue */
+  --light-blue: oklch(0.95 0.03 240);
+  /* Soft Blue */
 
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.18 0 0);
@@ -60,7 +127,8 @@
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.18 0 0);
 
-  --secondary: oklch(0.6 0.22 25);            /* Red */
+  --secondary: oklch(0.6 0.22 25);
+  /* Red */
   --secondary-foreground: oklch(0.99 0 0);
 
   --muted: oklch(0.96 0.005 95);
@@ -90,13 +158,17 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  h1, h2, h3, h4 {
+  h1,
+  h2,
+  h3,
+  h4 {
     font-family: var(--font-serif);
     letter-spacing: -0.01em;
     font-weight: 500;
   }
 
-  [dir="rtl"], .font-arabic {
+  [dir="rtl"],
+  .font-arabic {
     font-family: var(--font-arabic);
   }
 }
