@@ -1,5 +1,6 @@
 import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
 import { WelcomeAnimation } from "@/components/clinic/WelcomeAnimation";
+import { Toaster } from "@/components/ui/sonner";
 
 import appCss from "../styles.css?url";
 
@@ -74,6 +75,8 @@ function RootComponent() {
     <>
       <WelcomeAnimation />
       <Outlet />
+      <Toaster />
     </>
   );
 }
+

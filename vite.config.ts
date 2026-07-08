@@ -7,6 +7,7 @@ import tsconfigPaths from "vite-tsconfig-paths";
 export default defineConfig(({ mode }) => ({
     plugins: [
         tanstackStart({
+            customViteReactPlugin: true,
             spa: {
                 enabled: true,
                 prerender: {
