@@ -1,4 +1,4 @@
-import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
+import { Outlet, Link, createRootRoute, HeadContent, Scripts, useRouterState } from "@tanstack/react-router";
 import { WelcomeAnimation } from "@/components/clinic/WelcomeAnimation";
 import { Toaster } from "@/components/ui/sonner";
 
@@ -71,9 +71,12 @@ function RootShell({ children }: { children: React.ReactNode }) {
 }
 
 function RootComponent() {
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const isAdmin = pathname.startsWith("/admin");
+
   return (
     <>
-      <WelcomeAnimation />
+      {!isAdmin && <WelcomeAnimation />}
       <Outlet />
       <Toaster />
     </>
