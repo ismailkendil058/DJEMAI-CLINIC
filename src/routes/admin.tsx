@@ -204,19 +204,11 @@ function AdminPage() {
           </div>
           <div className="flex items-center gap-2">
             <button
-              onClick={handleReset}
-              className="inline-flex items-center justify-center gap-1.5 rounded-full border border-slate-200 bg-white px-4 py-2.5 text-xs font-semibold text-slate-600 transition-all hover:bg-slate-50"
-              title="Réinitialiser aux valeurs d'origine"
-            >
-              <RotateCcw className="h-3.5 w-3.5" />
-              <span className="hidden sm:inline">Réinitialiser</span>
-            </button>
-            <button
               onClick={handleSave}
-              className="inline-flex items-center justify-center gap-1.5 rounded-full bg-accent px-5 py-2.5 text-xs font-bold text-white shadow-md shadow-accent/25 transition-all hover:scale-[1.02] hover:bg-accent/90"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-accent text-white shadow-md shadow-accent/25 transition-all hover:scale-[1.05] hover:bg-accent/90 cursor-pointer"
+              title="Sauvegarder"
             >
-              <Save className="h-3.5 w-3.5" />
-              <span>Sauvegarder</span>
+              <Save className="h-5 w-5" />
             </button>
           </div>
         </div>
@@ -447,15 +439,7 @@ function AdminPage() {
                 </div>
               </div>
 
-              {/* Extra instructions */}
-              <div className="rounded-xl border border-slate-200 bg-slate-50 p-4 text-xs text-slate-500 space-y-2">
-                <h4 className="font-bold text-slate-700">Conseils d'utilisation :</h4>
-                <ul className="list-disc pl-4 space-y-1">
-                  <li>Utilisez l'option <strong>Monter/Descendre</strong> pour changer l'ordre d'affichage.</li>
-                  <li>Les lignes vides ne seront pas affichées sur la page d'accueil.</li>
-                  <li>Cliquez sur <strong>Sauvegarder</strong> en haut à droite pour appliquer définitivement les changements.</li>
-                </ul>
-              </div>
+              {/* Extra instructions removed */}
             </div>
           </section>
 
