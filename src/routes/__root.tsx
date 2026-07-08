@@ -61,6 +61,15 @@ function RootShell({ children }: { children: React.ReactNode }) {
     <html lang="en" suppressHydrationWarning>
       <head>
         <HeadContent />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              if (window.location.pathname.startsWith('/admin')) {
+                document.documentElement.classList.add('is-admin');
+              }
+            `,
+          }}
+        />
       </head>
       <body>
         {children}

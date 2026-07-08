@@ -6,6 +6,13 @@ export function WelcomeAnimation() {
     const [shouldRender, setShouldRender] = useState(true);
 
     useEffect(() => {
+        // Exit early if on admin page to avoid locking scroll
+        if (typeof window !== "undefined" && window.location.pathname.startsWith("/admin")) {
+            setIsVisible(false);
+            setShouldRender(false);
+            return;
+        }
+
         // Lock scroll to prevent jumping
         document.body.style.overflow = "hidden";
 
@@ -29,7 +36,7 @@ export function WelcomeAnimation() {
 
     return (
         <div
-            className={`fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#FAFAF8] transition-all duration-1000 cubic-bezier(0.23, 1, 0.32, 1) ${isVisible ? "opacity-100" : "opacity-0 invisible scale-110"
+            className={`welcome-animation-container fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#FAFAF8] transition-all duration-1000 cubic-bezier(0.23, 1, 0.32, 1) ${isVisible ? "opacity-100" : "opacity-0 invisible scale-110"
                 }`}
         >
             {/* Subtle Background Texture */}
