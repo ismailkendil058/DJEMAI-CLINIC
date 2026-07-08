@@ -11,7 +11,8 @@ export default defineConfig(({ mode }) => ({
             spa: {
                 enabled: true,
                 prerender: {
-                    outputPath: 'index'
+                    outputPath: 'index',
+                    routes: ['/', '/admin'],
                 }
             },
         }),
