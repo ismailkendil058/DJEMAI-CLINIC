@@ -1,10 +1,10 @@
-import { Phone, Facebook } from "lucide-react";
+import { Phone, Facebook, MessageCircle } from "lucide-react";
 import { FadeIn } from "@/components/FadeIn";
 import { useContactData, iconMap } from "@/lib/contactStore";
 
 export function Contact() {
   const { contactData } = useContactData();
-  const { items, callNowNumber, facebookUrl } = contactData;
+  const { items, callNowNumber, whatsappNumber, facebookUrl } = contactData;
 
   const renderIcon = (type: string) => {
     const IconComponent = iconMap[type as keyof typeof iconMap] || Phone;
@@ -52,6 +52,15 @@ export function Contact() {
                 >
                   <Phone className="h-4 w-4" strokeWidth={2.2} />
                   Appeler maintenant
+                </a>
+                <a
+                  href={`https://wa.me/${whatsappNumber.replace(/\s+/g, "")}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex w-full items-center justify-center gap-2 rounded-full bg-[#25D366] px-6 py-4 text-sm font-medium text-white shadow-md shadow-[#25D366]/30 transition-all hover:scale-[1.01] hover:bg-[#20bd5a]"
+                >
+                  <MessageCircle className="h-4 w-4" strokeWidth={2.2} />
+                  WhatsApp
                 </a>
                 <a
                   href={facebookUrl}

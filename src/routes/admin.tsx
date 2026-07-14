@@ -15,6 +15,7 @@ import {
   ChevronLeft,
   Facebook,
   ExternalLink,
+  MessageCircle,
 } from "lucide-react";
 import { toast } from "sonner";
 import {
@@ -64,6 +65,10 @@ function AdminPage() {
     // Basic validation
     if (!formState.callNowNumber.trim()) {
       toast.error("Le numéro de téléphone 'Appeler maintenant' ne peut pas être vide.");
+      return;
+    }
+    if (!formState.whatsappNumber.trim()) {
+      toast.error("Le numéro WhatsApp ne peut pas être vide.");
       return;
     }
     if (!formState.facebookUrl.trim()) {
@@ -246,6 +251,27 @@ function AdminPage() {
 
                 <div>
                   <label className="block text-xs font-bold text-slate-500 uppercase tracking-wide mb-1">
+                    Numéro WhatsApp
+                  </label>
+                  <div className="relative rounded-md shadow-sm">
+                    <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                      <MessageCircle className="h-4 w-4 text-slate-400" />
+                    </div>
+                    <input
+                      type="text"
+                      className="block w-full rounded-lg border border-slate-200 bg-slate-50 py-2 pl-9 pr-3 text-sm focus:border-accent focus:bg-white focus:outline-none"
+                      placeholder="Ex: 0771180581"
+                      value={formState.whatsappNumber}
+                      onChange={(e) => setFormState({ ...formState, whatsappNumber: e.target.value })}
+                    />
+                  </div>
+                  <p className="mt-1 text-[11px] text-slate-400">Le numéro de téléphone pour le bouton WhatsApp (format: 07XXXXXXXX).</p>
+                </div>
+              </div>
+
+              <div className="mt-4">
+                <div>
+                  <label className="block text-xs font-bold text-slate-500 uppercase tracking-wide mb-1">
                     Lien Facebook
                   </label>
                   <div className="relative rounded-md shadow-sm">
@@ -425,6 +451,16 @@ function AdminPage() {
                   >
                     <Phone className="h-4 w-4" strokeWidth={2.2} />
                     Appeler maintenant ({formState.callNowNumber || "vide"})
+                  </a>
+                  <a
+                    href={`https://wa.me/${formState.whatsappNumber.replace(/\s+/g, "")}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.preventDefault()}
+                    className="flex w-full items-center justify-center gap-2 rounded-full bg-[#25D366] px-6 py-4 text-sm font-medium text-white shadow-md shadow-[#25D366]/30 transition-all hover:scale-[1.01] cursor-pointer"
+                  >
+                    <MessageCircle className="h-4 w-4" strokeWidth={2.2} />
+                    WhatsApp ({formState.whatsappNumber || "vide"})
                   </a>
                   <a
                     href={formState.facebookUrl}

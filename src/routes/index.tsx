@@ -41,10 +41,10 @@ function Index() {
   return (
     <main className="min-h-screen bg-background">
       <Hero />
-      <Services />
       <Suspense fallback={<div className="h-40" />}>
         <Contact />
       </Suspense>
+      <Services />
       <Suspense fallback={<div className="h-20" />}>
         <Footer />
       </Suspense>

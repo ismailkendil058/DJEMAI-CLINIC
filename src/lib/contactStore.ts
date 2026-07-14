@@ -20,6 +20,7 @@ export interface ContactItem {
 export interface ContactData {
   items: ContactItem[];
   callNowNumber: string;
+  whatsappNumber: string;
   facebookUrl: string;
 }
 
@@ -32,6 +33,7 @@ export const defaultContactData: ContactData = {
     { id: "5", iconType: "Mail", lines: ["kinecentre@gmail.com"] },
   ],
   callNowNumber: "0771180581",
+  whatsappNumber: "0771180581",
   facebookUrl: "https://www.facebook.com/",
 };
 
@@ -46,7 +48,7 @@ export function getSavedContactData(): ContactData {
     if (!raw) return defaultContactData;
     const parsed = JSON.parse(raw);
     // basic structure validation to avoid corrupted localStorage breaking the app
-    if (parsed && Array.isArray(parsed.items) && typeof parsed.callNowNumber === "string" && typeof parsed.facebookUrl === "string") {
+    if (parsed && Array.isArray(parsed.items) && typeof parsed.callNowNumber === "string" && typeof parsed.whatsappNumber === "string" && typeof parsed.facebookUrl === "string") {
       return parsed;
     }
     return defaultContactData;
